@@ -5,7 +5,7 @@ pipeline {
         stage('Clone repository') {
             steps {
                 sh ('git clone https://github.com/divya09jan/Learning.git')
-				sh ('mvn clean -f Learning.git')
+		sh ('mvn clean -f Learning.git')
             }
         }
         stage('Terraform Init') {
