@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git branch: "main", url: "git clone https://github.com/divya09jan/Learning.git"
+                git branch: 'main', url: 'https://github.com/divya09jan/Learning.git'
 		
             }
         }
