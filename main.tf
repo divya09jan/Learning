@@ -6,19 +6,12 @@ terraform {
     }
   }
 }
+resource "aws_instance" "ec2_instance" {
+    ami = "${var.ami_id}"
+    count = "${var.number_of_instances}"
+    subnet_id = "${var.subnet_id}"
+    instance_type = "${var.instance_type}"
+    key_name = "${var.ami_key_pair_name}"
+} 
 
-provider "aws" {
-	access_key = "AKIAQXPZDHHQQ2J7IJMA"
-	secret_key = "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"
-	region     = "ap-south-1"
-}
-
-resource "aws_s3_bucket" "vivek12342" {
-  bucket = "donotdare21"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-}
 
